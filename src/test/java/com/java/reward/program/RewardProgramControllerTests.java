@@ -39,6 +39,11 @@ public class RewardProgramControllerTests {
 	@InjectMocks
 	private RewardProgramController rewardProgramController;
 
+	
+	/**
+	 * This method is used to initialize the test environment and set up any
+	 * necessary components required for the tests to run correctly.
+	 */
 	@BeforeEach
 	public void setUp() {
 		MockitoAnnotations.openMocks(this);
@@ -46,6 +51,12 @@ public class RewardProgramControllerTests {
 	}
 
 	
+	/**
+	 * The testCreateTransaction method is designed to
+	 * verify the successful creation of a transaction records
+	 * 
+	 * @throws Exception
+	 */
 	@Test
 	public void testCreateTransaction() throws Exception {
 		Transaction transaction = new Transaction();
@@ -65,6 +76,12 @@ public class RewardProgramControllerTests {
 	}
 
 	
+	/**
+	 * This method convert a Java object into its JSON string
+	 * 
+	 * @param obj
+	 * @return
+	 */
 	private String asJsonString(Object obj) {
 		try {
 			ObjectMapper objectMapper = new ObjectMapper();
@@ -75,6 +92,12 @@ public class RewardProgramControllerTests {
 		}
 	}
 	
+	
+	
+	/**
+	 * This method is used to test the record for a specific customer 
+	 * @throws Exception
+	 */
 	@Test
 	public void testGetRewardPointsBasedOnCustomerId() throws Exception {
 		Long customerId = 1L;
@@ -90,6 +113,11 @@ public class RewardProgramControllerTests {
 			assertEquals(expectedResponse, actualResponse);
 		});
 	}
+	
+	/**
+	 * This Method is for testing the input field validation
+	 * @throws Exception
+	 */
 
 	@Test
 	public void testGetRewardPointsBasedOnCustomerId_InvalidCustomerIdFormat() throws Exception {
@@ -98,7 +126,11 @@ public class RewardProgramControllerTests {
 		String response = result.getResponse().getContentAsString();
 		assertEquals("Invalid customer ID format", response);
 	}
-	
+
+	/**
+	 * This Method is for testing the negative input validation
+	 * @throws Exception
+	 */
 	@Test
 	public void testGetRewardPointsBasedOnCustomerId_NegativeCustomerId() throws Exception {
 		MvcResult result = mockMvc.perform(get("/api/v1/customer/-1")) 

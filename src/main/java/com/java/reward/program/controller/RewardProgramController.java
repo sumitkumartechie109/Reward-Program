@@ -49,7 +49,8 @@ public class RewardProgramController {
 	
 	
 	/**
-	 * The getRewardPointsBasedOnCustomerId returns RewardPointResponse from the database
+	 * The getRewardPointsBasedOnCustomerId returns RewardPointResponse 
+	 * from the database
 	 * 
 	 * @param customerId
 	 * @return

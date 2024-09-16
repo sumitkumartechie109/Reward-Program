@@ -6,8 +6,15 @@ import java.util.Map;
 
 public class RewardPointResponse {
 
-	
+	/**
+	 * This variable monthlyPoints stores monthly rewards points of a customer
+	 */
 	private Map<String, Integer> monthlyPoints;
+	
+	
+	/**
+	 * The variable totalPoints provide the total of monthly rewards points
+	 */
 	
 	private int totalPoints;
 
